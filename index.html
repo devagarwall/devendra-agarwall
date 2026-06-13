@@ -1,4 +1,9 @@
 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,9 +146,15 @@ hr { border: none; border-top: 1px solid var(--border); }
 .did-content p { font-size: 13px; color: var(--mid); line-height: 1.6; }
 
 /* YOUTUBE SECTION */
-.yt-header { display: flex; gap: 40px; align-items: flex-start; margin-bottom: 36px; flex-wrap: wrap; }
+.yt-header{
+display:grid;
+grid-template-columns:1.6fr .8fr;
+gap:32px;
+align-items:start;
+margin-bottom:30px;
+}
 .yt-meta { flex: 1; min-width: 260px; }
-.yt-analytics-card { flex: 0 0 280px; background: var(--surface); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+.yt-analytics-card { width:100%; background: var(--surface); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
 .yt-analytics-img { width: 100%; height: 160px; object-fit: cover; object-position: center 30%; border-bottom: 1px solid var(--border); }
 .yt-analytics-body { padding: 18px; }
 .yt-analytics-body h4 { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; }
@@ -156,9 +167,23 @@ hr { border: none; border-top: 1px solid var(--border); }
 .thumb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .thumb-card { border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: white; transition: all 0.25s; cursor: pointer; }
 .thumb-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(217,56,0,.12); border-color: var(--accent); }
-.thumb-img { aspect-ratio: 16/9; overflow: hidden; }
-.thumb-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; display: block; }
-.thumb-card:hover .thumb-img img { transform: scale(1.06); }
+.thumb-img{
+    height:auto !important;
+    overflow:visible !important;
+    background:#fff;
+}
+.thumb-img img{
+    width:100% !important;
+    height:auto !important;
+    display:block !important;
+    object-fit:contain !important;
+}
+.thumb-card:hover .thumb-img img{
+    width:100% !important;
+    height:auto !important;
+    display:block !important;
+    object-fit:contain !important;
+}
 .thumb-copy { padding: 14px 16px; }
 .thumb-copy-tag { font-size: 10px; font-weight: 600; color: var(--accent); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
 .thumb-copy-title { font-size: 13px; font-weight: 600; color: var(--dark); line-height: 1.4; }
@@ -212,10 +237,64 @@ footer { text-align: center; padding: 24px 60px; font-size: 12px; color: #555; b
   .thumb-grid { grid-template-columns: repeat(2,1fr); }
   .expertise-grid { grid-template-columns: repeat(2,1fr); }
   .tools-grid, .achieve-grid { grid-template-columns: repeat(2,1fr); }
-  .yt-header { flex-direction: column; }
+  .yt-header{
+display:grid;
+grid-template-columns:1.6fr .8fr;
+gap:32px;
+align-items:start;
+margin-bottom:30px;
+}
   .yt-analytics-card { flex: none; width: 100%; }
   .contact-wrap { padding: 60px 20px; }
 }
+
+.thumb-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:16px !important;
+}
+.thumb-card{
+  display:flex !important;
+  flex-direction:column !important;
+  height:100% !important;
+}
+.thumb-img{
+  height:260px !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:flex-start !important;
+  justify-content:center !important;
+  background:#fff !important;
+}
+.thumb-img img{
+  width:100% !important;
+  height:260px !important;
+  object-fit:cover !important;
+  object-position:center top !important;
+}
+
+
+.hero-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+.hero-summary{padding-left:40px;border-left:3px solid var(--accent);}
+.summary-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px;}
+.hero-summary p{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:14px;}
+.hero-summary strong{color:var(--dark);}
+.hero-summary ul{margin-top:20px;padding-left:18px;}
+.hero-summary li{margin-bottom:8px;color:var(--dark);font-weight:500;}
+@media(max-width:768px){.hero-layout{grid-template-columns:1fr;gap:30px;}.hero-summary{padding-left:20px;}}
+
+
+.hero{padding:40px 60px 25px!important;}
+.hero-cta{margin-bottom:20px!important;}
+.section{padding:55px 60px!important;}
+.section-sub{margin-bottom:30px!important;}
+.stats-banner{padding:28px 60px!important;}
+.contact-wrap{padding:60px 60px!important;}
+.hero-layout{gap:35px!important;}
+.hero-summary p{margin-bottom:10px!important;line-height:1.65!important;}
+.hero-summary ul{margin-top:12px!important;}
+hr{margin:0!important;}
+
 </style>
 </head>
 <body>
@@ -233,19 +312,42 @@ footer { text-align: center; padding: 24px 60px; font-size: 12px; color: #555; b
 </nav>
 
 <!-- HERO -->
+
 <section class="hero">
+<div class="hero-layout">
+<div>
   <h1 class="hero-name">Devendra<br>Agarwal</h1>
   <h2 class="hero-subtitle">Copywriter & Content Strategist</h2>
-  <p class="hero-tagline">
-    I write copy that makes people <strong>stop scrolling.</strong><br>
-    500+ pieces. 13 months. 200% growth.<br>
-    Hooks, scripts, captions — all audience-first.
-  </p>
   <div class="hero-cta">
     <a href="mailto:devendra.agarwal2002@gmail.com" class="cta-primary">Get in Touch →</a>
     <a href="#work" class="cta-secondary">See the Work</a>
   </div>
+</div>
+
+<div class="hero-summary">
+  <div class="summary-tag">MBA (Marketing & Analytics) · IIIT Lucknow</div>
+
+  <p>500+ pieces written across legal media, social content, video scripts and brand copy since 2021.</p>
+
+  <p>Helped grow <strong>Desi Kaanoon from 60K → 100K followers</strong> through audience-first content and consistent execution.</p>
+
+  <p>Built a personal YouTube channel that generated <strong>560K+ organic views</strong> through scripting, titles and thumbnail strategy.</p>
+
+  <p>I combine storytelling, strategy and analytics to create content that earns attention and drives action.</p>
+
+  <ul>
+    <li>Audience-first copy</li>
+    <li>Growth-driven content strategy</li>
+    <li>Fast, reliable execution</li>
+    <li>Cross-functional collaboration</li>
+  </ul>
+</div>
+</div>
 </section>
+
+
+
+<hr>
 
 <!-- STATS -->
 <div class="stats-banner">
@@ -268,27 +370,6 @@ footer { text-align: center; padding: 24px 60px; font-size: 12px; color: #555; b
     </div>
   </div>
 </div>
-
-<hr>
-
-<!-- ABOUT -->
-<section class="section">
-  <div class="section-label">About</div>
-  <h2 class="section-title">Why I Write</h2>
-  <div class="story-grid">
-    <div class="story-text">
-      <p>I'm an <strong>MBA graduate (2026) in Marketing & Analytics from IIIT Lucknow</strong>. I've been writing since 2021 — legal articles, video scripts, social captions, and brand copy across multiple platforms and industries.</p>
-      <p>At <strong>Desi Kaanoon</strong>, I was the sole content engine for 13 months. Every article, reel script, and caption passed through me. I grew the page from <strong>60K to 100K verified followers</strong> — purely through consistent, audience-first content.</p>
-      <p>On <strong>YouTube</strong>, I built a personal channel from scratch — scripting, titling, and designing every thumbnail myself. The result: <strong>5,60,633 views, zero rupees spent.</strong></p>
-    </div>
-    <div class="highlight-cards">
-      <div class="h-card"><h4>🎯 Audience-First Always</h4><p>I think about who is reading before I type a word. Copy that doesn't connect doesn't count.</p></div>
-      <div class="h-card"><h4>📊 Numbers-Driven</h4><p>I track, test, and iterate. Every 200% growth number I claim is backed by real data.</p></div>
-      <div class="h-card"><h4>⚡ Deadline Discipline</h4><p>2–3 pieces a day for 13 straight months. Fast without losing quality.</p></div>
-      <div class="h-card"><h4>🤝 Team Player</h4><p>Worked alongside Supreme Court lawyers, founders, and marketers. I adapt to any voice.</p></div>
-    </div>
-  </div>
-</section>
 
 <hr>
 
@@ -320,6 +401,19 @@ footer { text-align: center; padding: 24px 60px; font-size: 12px; color: #555; b
         </div>
       </div>
       <p class="reel-description">This reel went viral across Instagram. Every word in the script was tested. The hook. The pacing. The CTA. Nothing was left to chance.</p>
+<div style="margin-top:28px;padding:24px;background:var(--surface);border-radius:12px;border-left:3px solid var(--accent);">
+<h4 style="font-family:'Space Grotesk',sans-serif;font-size:18px;margin-bottom:14px;">Why This Reel Worked</h4>
+<p style="font-size:14px;line-height:1.8;color:var(--mid);margin-bottom:12px;">
+The reel opened with a strong curiosity gap and immediately addressed a topic people already cared about. Instead of revealing everything upfront, the script created tension that encouraged viewers to keep watching.
+</p>
+<p style="font-size:14px;line-height:1.8;color:var(--mid);margin-bottom:12px;">
+Every line was written for retention. Short sentences, fast pacing and a clear narrative structure helped maintain attention throughout the video.
+</p>
+<p style="font-size:14px;line-height:1.8;color:var(--mid);">
+The result was higher shares, stronger engagement and significant organic reach without paid promotion.
+</p>
+</div>
+
     </div>
     
     <!-- Desi Kaanoon YouTube Video (Right) -->
@@ -379,13 +473,18 @@ footer { text-align: center; padding: 24px 60px; font-size: 12px; color: #555; b
 <!-- YOUTUBE -->
 <section class="section" id="youtube">
   <div class="section-label">Personal Channel · Asli Baniya</div>
-  <h2 class="section-title">YouTube — Every Word Mine</h2>
+  <h2 class="section-title" style="font-size:48px;line-height:1.1;margin-bottom:20px;">
+<span style="color:#ff0000;">▶</span> YouTube — <span style="color:#D93800;">Every Word Mine</span>
+</h2>
   <p class="section-sub">Script. Hook. Thumbnail copy. Title. I handled every piece of copy on this channel — from the first line to the final frame.</p>
 
-  <div class="yt-header">
-    <div class="yt-meta">
-      <p style="font-size:15px;color:var(--mid);line-height:1.8;max-width:500px;">Built a channel from scratch with zero budget. Wrote every script, designed every thumbnail, crafted every title. No shortcuts. No editing tricks. Just copy that worked.</p>
-    </div>
+  
+<div class="yt-header">
+  <div>
+    <p style="font-size:15px;color:var(--mid);line-height:1.8;margin-bottom:24px;">
+      Built a channel from scratch with zero budget. Wrote every script, designed every thumbnail, crafted every title. No shortcuts. No editing tricks. Just copy that worked.
+    </p>
+
     <div class="yt-analytics-card">
       <img class="yt-analytics-img" src="analytics.png" alt="YouTube Analytics">
       <div class="yt-analytics-body">
@@ -398,7 +497,27 @@ footer { text-align: center; padding: 24px 60px; font-size: 12px; color: #555; b
     </div>
   </div>
 
-  <div class="thumb-grid">
+  <div style="padding-top:10px;">
+    <h3 style="font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:800;margin-bottom:20px;">
+      What This Channel Taught Me
+    </h3>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--mid);margin-bottom:16px;">
+      Growing a channel without a budget forced me to understand attention. Every title, thumbnail and opening line had one job: earn the click.
+    </p>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--mid);margin-bottom:16px;">
+      I tested hooks, storytelling structures and thumbnail concepts to understand what makes people stop scrolling and start watching.
+    </p>
+
+    <p style="font-size:15px;line-height:1.9;color:var(--mid);">
+      The result wasn't just views. It was a repeatable system for creating content that attracts attention, builds retention and drives action.
+    </p>
+  </div>
+</div>
+
+<div class="thumb-grid">
+
     <div class="thumb-card">
       <div class="thumb-img"><img src="ASLI SACHH.png" alt="Asli Sachh"></div>
       <div class="thumb-copy">
