@@ -1,0 +1,658 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devendra Agarwal — Copywriter & Content Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --accent: #D93800;
+  --dark:   #111111;
+  --mid:    #555555;
+  --muted:  #999999;
+  --border: #E8E8E8;
+  --bg:     #FFFFFF;
+  --surface:#F7F7F7;
+}
+html { scroll-behavior: smooth; }
+body { font-family: "Inter", sans-serif; background: #FFFFFF; color: var(--dark); line-height: 1.6; font-size: 16px; }
+
+/* NAV */
+nav { position: sticky; top: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 60px; display: flex; justify-content: space-between; align-items: center; z-index: 999; }
+.nav-logo { font-family: "Space Grotesk", sans-serif; font-size: 15px; font-weight: 700; color: var(--dark); text-decoration: none; }
+.nav-menu { display: flex; gap: 28px; align-items: center; }
+.nav-link { font-size: 13px; color: var(--mid); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+.nav-link:hover { color: var(--accent); }
+.nav-email { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; border: 1px solid var(--accent); padding: 7px 16px; border-radius: 6px; transition: all 0.2s; }
+.nav-email:hover { background: var(--accent); color: white; }
+
+/* HERO */
+.hero { padding: 60px 60px 50px; max-width: 1100px; margin: 0 auto; }
+.hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+.hero-name { font-family: "Space Grotesk", sans-serif; font-size: clamp(52px, 8vw, 88px); font-weight: 800; letter-spacing: -3px; line-height: 1.0; color: var(--dark); margin-bottom: 20px; }
+.hero-subtitle { font-family: "Space Grotesk", sans-serif; font-size: clamp(18px, 2.5vw, 26px); font-weight: 600; color: var(--mid); letter-spacing: -0.5px; margin-bottom: 20px; }
+.hero-tagline { font-size: 17px; color: var(--mid); max-width: 580px; line-height: 1.8; margin-bottom: 40px; }
+.hero-tagline strong { color: var(--dark); }
+.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 80px; }
+.cta-primary { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; padding: 13px 26px; border-radius: 8px; text-decoration: none; background: var(--accent); color: white; transition: all .2s; }
+.cta-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+.cta-secondary { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; padding: 13px 26px; border-radius: 8px; text-decoration: none; border: 1.5px solid var(--border); color: var(--dark); transition: all .2s; }
+.cta-secondary:hover { border-color: var(--dark); }
+
+/* STATS */
+.stats-banner { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 44px 60px; background: var(--surface); }
+.stats-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+.stat { padding: 0 40px 0 0; border-right: 1px solid var(--border); margin-right: 40px; }
+.stat:last-child { border-right: none; }
+.stat-number { font-family: "Space Grotesk", sans-serif; font-size: 40px; font-weight: 800; color: var(--dark); letter-spacing: -2px; margin-bottom: 6px; }
+.stat-number .acc { color: var(--accent); }
+.stat-label { font-size: 12px; color: var(--muted); font-weight: 500; letter-spacing: .04em; }
+
+/* SECTIONS */
+.section { max-width: 1100px; margin: 0 auto; padding: 80px 60px; }
+.section-label { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
+.section-title { font-family: "Space Grotesk", sans-serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; letter-spacing: -1.5px; color: var(--dark); margin-bottom: 12px; }
+.section-sub { font-size: 16px; color: var(--mid); max-width: 520px; line-height: 1.7; margin-bottom: 52px; }
+hr { border: none; border-top: 1px solid var(--border); }
+
+/* ABOUT / STORY */
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+.story-text p { font-size: 15px; color: var(--mid); line-height: 1.9; margin-bottom: 18px; }
+.story-text strong { color: var(--dark); font-weight: 600; }
+.highlight-cards { display: flex; flex-direction: column; gap: 16px; }
+.h-card { background: var(--surface); padding: 20px 24px; border-radius: 10px; border-left: 3px solid var(--accent); }
+.h-card h4 { font-family: "Space Grotesk", sans-serif; font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.h-card p { font-size: 13px; color: var(--mid); line-height: 1.6; margin: 0; }
+
+/* INSTAGRAM REEL SECTION */
+.reel-section { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-bottom: 40px; }
+.reel-wrapper { position: relative; }
+.reel-title { font-family: "Space Grotesk", sans-serif; font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+.reel-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+.reel-stat-card { background: var(--surface); padding: 16px; border-radius: 10px; border-left: 3px solid var(--accent); }
+.reel-stat-val { font-family: "Space Grotesk", sans-serif; font-size: 24px; font-weight: 800; color: var(--accent); }
+.reel-stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: .06em; }
+.reel-description { font-size: 15px; color: var(--mid); line-height: 1.8; margin-top: 20px; }
+
+/* DESI KAANOON YT VIDEO */
+.dk-yt-section { background: var(--surface); padding: 28px; border-radius: 12px; border: 1px solid var(--border); }
+.dk-yt-label { font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 12px; }
+.dk-yt-title { font-family: "Space Grotesk", sans-serif; font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+.dk-yt-iframe { width: 100%; height: 240px; border: none; border-radius: 8px; }
+.dk-yt-stats { display: flex; gap: 16px; margin-top: 20px; }
+.dk-yt-stat { flex: 1; }
+.dk-yt-stat-val { font-family: "Space Grotesk", sans-serif; font-size: 18px; font-weight: 700; color: var(--accent); }
+.dk-yt-stat-label { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+/* WORK — DESI KAANOON */
+.work-grid {
+
+    display: block;
+
+    max-width: 900px;
+
+}
+
+.dk-screenshots {
+
+    display: block;
+
+}
+
+.dk-screenshots img {
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+
+}
+
+.dk-screenshots img:first-child {
+
+    border-right: none;
+
+}
+.dk-screenshots img { width: 40; height: 80%; object-fit: cover; object-position: bottom; display: block; }
+.dk-screenshots img:first-child { border-right: 1px solid var(--border); }
+.dk-card-body { padding: 28px; border-top: 1px solid var(--border); }
+.dk-badge { display: inline-flex; align-items: center; gap: 6px; background: #EFF7F0; color: #1A7A3C; font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
+.dk-card-body h3 { font-family: "Space Grotesk", sans-serif; font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+.dk-card-body p { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+.dk-nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.dk-num { background: var(--surface); padding: 12px; border-radius: 8px; text-align: center; }
+.dk-num-v { font-family: "Space Grotesk", sans-serif; font-size: 20px; font-weight: 800; color: var(--accent); }
+.dk-num-l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-top: 2px; }
+.dk-link { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; }
+.dk-link:hover { text-decoration: underline; }
+
+/* WHAT I DID LIST */
+.did-list { display: flex; flex-direction: column; gap: 0; }
+.did-item { display: flex; gap: 16px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--border); }
+.did-item:first-child { padding-top: 0; }
+.did-num { font-family: "Space Grotesk", sans-serif; font-size: 28px; font-weight: 800; color: var(--border); min-width: 44px; }
+.did-content h4 { font-family: "Space Grotesk", sans-serif; font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.did-content p { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+/* YOUTUBE SECTION */
+.yt-header{
+display:grid;
+grid-template-columns:1.6fr .8fr;
+gap:32px;
+align-items:start;
+margin-bottom:30px;
+}
+.yt-meta { flex: 1; min-width: 260px; }
+.yt-analytics-card { width:100%; background: var(--surface); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+.yt-analytics-img { width: 100%; height: 160px; object-fit: cover; object-position: center 30%; border-bottom: 1px solid var(--border); }
+.yt-analytics-body { padding: 18px; }
+.yt-analytics-body h4 { font-size: 12px; font-weight: 600; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; }
+.yt-metric-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.yt-metric-row:last-child { border-bottom: none; }
+.yt-metric-label { font-size: 13px; color: var(--mid); }
+.yt-metric-val { font-family: "Space Grotesk", sans-serif; font-size: 16px; font-weight: 700; }
+.yt-metric-val.hi { color: var(--accent); }
+
+.thumb-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.thumb-card { border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: white; transition: all 0.25s; cursor: pointer; }
+.thumb-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(217,56,0,.12); border-color: var(--accent); }
+.thumb-img{
+    height:auto !important;
+    overflow:visible !important;
+    background:#fff;
+}
+.thumb-img img{
+    width:100% !important;
+    height:auto !important;
+    display:block !important;
+    object-fit:contain !important;
+}
+.thumb-card:hover .thumb-img img{
+    width:100% !important;
+    height:auto !important;
+    display:block !important;
+    object-fit:contain !important;
+}
+.thumb-copy { padding: 14px 16px; }
+.thumb-copy-tag { font-size: 10px; font-weight: 600; color: var(--accent); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
+.thumb-copy-title { font-size: 13px; font-weight: 600; color: var(--dark); line-height: 1.4; }
+
+/* EXPERTISE */
+.expertise-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.exp-card { border: 1px solid var(--border); border-radius: 12px; padding: 24px; background: white; transition: border-color .2s; }
+.exp-card:hover { border-color: var(--accent); }
+.exp-icon { font-size: 26px; margin-bottom: 14px; }
+.exp-card h4 { font-family: "Space Grotesk", sans-serif; font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+.exp-card p { font-size: 12px; color: var(--mid); line-height: 1.6; }
+
+/* TOOLS */
+.tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.tool-category h4 { font-family: "Space Grotesk", sans-serif; font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 14px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { background: var(--surface); color: var(--dark); padding: 7px 14px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1px solid var(--border); }
+
+/* ACHIEVEMENTS */
+.achieve-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.achieve-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: white; text-decoration: none; display: block; transition: all .2s; }
+.achieve-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,.08); }
+.achieve-img-wrap { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+.achieve-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.achieve-body { padding: 14px; }
+.achieve-title { font-family: "Space Grotesk", sans-serif; font-size: 13px; font-weight: 700; color: var(--dark); }
+.achieve-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+/* CONTACT */
+.contact-wrap { background: var(--dark); padding: 80px 60px; }
+.contact-inner { max-width: 1100px; margin: 0 auto; }
+.contact-wrap .section-label { color: #555; }
+.contact-big { font-family: "Space Grotesk", sans-serif; font-size: clamp(32px,5vw,64px); font-weight: 800; letter-spacing: -2px; line-height: 1.1; color: white; margin: 12px 0 20px; }
+.contact-big .acc { color: var(--accent); }
+.contact-sub { font-size: 16px; color: #777; margin-bottom: 44px; }
+.contact-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.c-link { text-decoration: none; font-size: 14px; font-weight: 600; color: white; border-bottom: 1px solid #333; padding-bottom: 4px; transition: border-color .2s; }
+.c-link:hover { border-color: var(--accent); color: var(--accent); }
+
+footer { text-align: center; padding: 24px 60px; font-size: 12px; color: #555; background: #0A0A0A; border-top: 1px solid #1a1a1a; }
+
+@media (max-width: 768px) {
+  nav, .hero, .section { padding-left: 20px; padding-right: 20px; }
+  nav { padding: 12px 20px; }
+  .hero { padding-top: 90px; }
+  .stats-container { grid-template-columns: repeat(2,1fr); }
+  .stat { border-right: none; margin-right: 0; padding-right: 0; }
+  .story-grid, .work-grid, .reel-section { grid-template-columns: 1fr; }
+  .dk-nums { grid-template-columns: repeat(2,1fr); }
+  .reel-stats { grid-template-columns: 1fr; }
+  .thumb-grid { grid-template-columns: repeat(2,1fr); }
+  .expertise-grid { grid-template-columns: repeat(2,1fr); }
+  .tools-grid, .achieve-grid { grid-template-columns: repeat(2,1fr); }
+  .yt-header{
+display:grid;
+grid-template-columns:1.6fr .8fr;
+gap:32px;
+align-items:start;
+margin-bottom:30px;
+}
+  .yt-analytics-card { flex: none; width: 100%; }
+  .contact-wrap { padding: 60px 20px; }
+}
+
+.thumb-grid{
+  display:grid !important;
+  grid-template-columns:repeat(3,1fr) !important;
+  gap:16px !important;
+}
+.thumb-card{
+  display:flex !important;
+  flex-direction:column !important;
+  height:100% !important;
+}
+.thumb-img{
+  height:260px !important;
+  overflow:hidden !important;
+  display:flex !important;
+  align-items:flex-start !important;
+  justify-content:center !important;
+  background:#fff !important;
+}
+.thumb-img img{
+  width:100% !important;
+  height:260px !important;
+  object-fit:cover !important;
+  object-position:center top !important;
+}
+
+
+.hero-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;}
+.hero-summary{padding-left:40px;border-left:3px solid var(--accent);}
+.summary-tag{display:inline-block;font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px;}
+.hero-summary p{font-size:15px;line-height:1.8;color:var(--mid);margin-bottom:14px;}
+.hero-summary strong{color:var(--dark);}
+.hero-summary ul{margin-top:20px;padding-left:18px;}
+.hero-summary li{margin-bottom:8px;color:var(--dark);font-weight:500;}
+@media(max-width:768px){.hero-layout{grid-template-columns:1fr;gap:30px;}.hero-summary{padding-left:20px;}}
+
+
+.hero{padding:40px 60px 25px!important;}
+.hero-cta{margin-bottom:20px!important;}
+.section{padding:55px 60px!important;}
+.section-sub{margin-bottom:30px!important;}
+.stats-banner{padding:28px 60px!important;}
+.contact-wrap{padding:60px 60px!important;}
+.hero-layout{gap:35px!important;}
+.hero-summary p{margin-bottom:10px!important;line-height:1.65!important;}
+.hero-summary ul{margin-top:12px!important;}
+hr{margin:0!important;}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">DA.</a>
+  <div class="nav-menu">
+    <a href="#work" class="nav-link">Desi Kaanoon</a>
+    <a href="#reel" class="nav-link">Reel</a>
+    <a href="#youtube" class="nav-link">YouTube</a>
+    <a href="#expertise" class="nav-link">Expertise</a>
+    <a href="#contact" class="nav-link">Contact</a>
+  </div>
+  <a href="mailto:devendra.agarwal2002@gmail.com" class="nav-email">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+<div class="hero-layout">
+<div>
+  <h1 class="hero-name">Devendra<br>Agarwal</h1>
+  <h2 class="hero-subtitle">Copywriter & Content Strategist</h2>
+  <div class="hero-cta">
+    <a href="mailto:devendra.agarwal2002@gmail.com" class="cta-primary">Get in Touch →</a>
+    <a href="#work" class="cta-secondary">See the Work</a>
+  </div>
+</div>
+
+<div class="hero-summary">
+  <div class="summary-tag">MBA (Marketing & Analytics) · IIIT Lucknow</div>
+
+  <p>500+ pieces written across legal media, social content, video scripts and brand copy since 2021.</p>
+
+  <p>Helped grow <strong>Desi Kaanoon from 60K → 100K followers</strong> through audience-first content and consistent execution.</p>
+
+  <p>Built a personal YouTube channel that generated <strong>560K+ organic views</strong> through scripting, titles and thumbnail strategy.</p>
+
+  <p>I combine storytelling, strategy and analytics to create content that earns attention and drives action.</p>
+
+  <ul>
+    <li>Audience-first copy</li>
+    <li>Growth-driven content strategy</li>
+    <li>Fast, reliable execution</li>
+    <li>Cross-functional collaboration</li>
+  </ul>
+</div>
+</div>
+</section>
+
+
+
+<hr>
+
+<section class="section" id="copy-sells">
+  <div class="section-label">Spec Work</div>
+  <h2 class="section-title">Copy That Sells</h2>
+  <p class="section-sub" style="max-width:100%;">Product copy, ad copy and landing page concepts created to demonstrate copywriting skills.</p>
+
+  <div class="thumb-grid">
+    <div class="thumb-card">
+      <div class="thumb-img"><img src="product-page.jpg" alt="Product Copy"></div>
+      <div class="thumb-copy"><div class="thumb-copy-tag">Product Page Copy</div><div class="thumb-copy-title">Hydration without the heaviness.</div></div>
+    </div>
+    <div class="thumb-card">
+      <div class="thumb-img"><img src="meta-ad-1.jpg" alt="Meta Ad"></div>
+      <div class="thumb-copy"><div class="thumb-copy-tag">Meta Ad Copy</div><div class="thumb-copy-title">Your moisturizer shouldn't feel like a mask.</div></div>
+    </div>
+    <div class="thumb-card">
+      <div class="thumb-img"><img src="landing-page.jpg" alt="Landing Page"></div>
+      <div class="thumb-copy"><div class="thumb-copy-tag">Landing Page Copy</div><div class="thumb-copy-title">Science-backed skincare that does what it says.</div></div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section" id="email-copy">
+  <div class="section-label">Spec Work</div>
+  <h2 class="section-title">Email Copy Samples</h2>
+  <p class="section-sub" style="max-width:100%;">Email concepts designed for welcome, recovery and launch campaigns.</p>
+
+  <div class="thumb-grid">
+    <div class="thumb-card">
+      <div class="thumb-img"><img src="email-1.jpg" alt="Welcome Email"></div>
+      <div class="thumb-copy"><div class="thumb-copy-tag">Welcome Email</div><div class="thumb-copy-title">Your skin barrier is asking for help.</div></div>
+    </div>
+    <div class="thumb-card">
+      <div class="thumb-img"><img src="email-2.jpg" alt="Cart Recovery"></div>
+      <div class="thumb-copy"><div class="thumb-copy-tag">Cart Recovery</div><div class="thumb-copy-title">You left something behind.</div></div>
+    </div>
+    <div class="thumb-card">
+      <div class="thumb-img"><img src="email-3.jpg" alt="Launch Email"></div>
+      <div class="thumb-copy"><div class="thumb-copy-tag">Product Launch</div><div class="thumb-copy-title">Meet the new Niacinamide 10%.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- STATS -->
+<div class="stats-banner">
+  <div class="stats-container">
+    <div class="stat">
+      <div class="stat-number">100<span class="acc">K</span></div>
+      <div class="stat-label">Desi Kaanoon Followers</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">560<span class="acc">K+</span></div>
+      <div class="stat-label">YouTube Views</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">13<span class="acc">mo</span></div>
+      <div class="stat-label">Zero Missed Deadlines</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">500<span class="acc">+</span></div>
+      <div class="stat-label">Pieces Written</div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- REEL SECTION -->
+<section class="section" id="reel">
+  <div class="section-label">Live Content · Instagram</div>
+  <h2 class="section-title">Reel Performance</h2>
+  
+  <div class="reel-section">
+    <!-- Reel Stats (Left) -->
+    <div>
+      <div class="reel-title">What This One Did</div>
+      <div class="reel-stats">
+        <div class="reel-stat-card">
+          <div class="reel-stat-val">47K</div>
+          <div class="reel-stat-label">Likes</div>
+        </div>
+        <div class="reel-stat-card">
+          <div class="reel-stat-val">2.3K</div>
+          <div class="reel-stat-label">Comments</div>
+        </div>
+        <div class="reel-stat-card">
+          <div class="reel-stat-val">89K</div>
+          <div class="reel-stat-label">Shares</div>
+        </div>
+        <div class="reel-stat-card">
+          <div class="reel-stat-val">2.1M</div>
+          <div class="reel-stat-label">Reach</div>
+        </div>
+      </div>
+      <p class="reel-description">This reel went viral across Instagram. Every word in the script was tested. The hook. The pacing. The CTA. Nothing was left to chance.</p>
+<div style="margin-top:28px;padding:24px;background:var(--surface);border-radius:12px;border-left:3px solid var(--accent);">
+<h4 style="font-family:'Space Grotesk',sans-serif;font-size:18px;margin-bottom:14px;">Why This Reel Worked</h4>
+<p style="font-size:14px;line-height:1.8;color:var(--mid);margin-bottom:12px;">
+The reel opened with a strong curiosity gap and immediately addressed a topic people already cared about. Instead of revealing everything upfront, the script created tension that encouraged viewers to keep watching.
+</p>
+<p style="font-size:14px;line-height:1.8;color:var(--mid);margin-bottom:12px;">
+Every line was written for retention. Short sentences, fast pacing and a clear narrative structure helped maintain attention throughout the video.
+</p>
+<p style="font-size:14px;line-height:1.8;color:var(--mid);">
+The result was higher shares, stronger engagement and significant organic reach without paid promotion.
+</p>
+</div>
+
+    </div>
+    
+    <!-- Desi Kaanoon YouTube Video (Right) -->
+    <div class="dk-yt-section">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C3XaLKSLOrk/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+<script async src="https://www.instagram.com/embed.js"></script>
+</div>
+  </div>
+</section>
+
+<hr>
+
+
+<!-- WORK — DESI KAANOON -->
+<section class="section" id="work">
+  <div class="section-label">Featured Work · Mar 2024 – Apr 2025</div>
+  <h2 class="section-title">Desi Kaanoon</h2>
+
+  <p class="section-sub" style="max-width:100%;margin-bottom:40px;">
+    India's verified legal media brand. I ran the entire content operation — for 13 months straight.
+  </p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:32px;">
+      <div style="border:1px solid #E8E8E8;border-radius:12px;overflow:hidden;">
+          <img src="DK.png" alt="Desi Kaanoon" style="width:100%;display:block;">
+      </div>
+
+      <div style="border:1px solid #E8E8E8;border-radius:12px;overflow:hidden;">
+          <iframe width="100%" height="420"
+          src="https://www.youtube.com/embed/haJOJSpjVy4?controls=0"
+          frameborder="0" allowfullscreen></iframe>
+      </div>
+  </div>
+
+  <p style="font-size:18px;line-height:1.8;width:100%;max-width:none;margin-bottom:30px;">
+    Sole content manager for India's emerging legal media platform. Wrote 500+ articles,
+    captions, and video scripts alongside Supreme Court lawyers — turning dense legal language
+    into compelling copy that drove 200% engagement growth.
+  </p>
+
+  <div class="dk-nums" style="margin-bottom:50px;">
+      <div class="dk-num"><div class="dk-num-v">100K+</div><div class="dk-num-l">Followers</div></div>
+      <div class="dk-num"><div class="dk-num-v">200%</div><div class="dk-num-l">Engagement</div></div>
+      <div class="dk-num"><div class="dk-num-v">500+</div><div class="dk-num-l">Pieces Written</div></div>
+      <div class="dk-num"><div class="dk-num-v">3×</div><div class="dk-num-l">Organic Reach</div></div>
+  </div>
+
+  <div class="did-list">
+      <div class="did-item"><div class="did-num">01</div><div class="did-content"><h4>Scripted every video</h4><p>Turned Supreme Court judgements into short-form scripts people actually watched.</p></div></div>
+      <div class="did-item"><div class="did-num">02</div><div class="did-content"><h4>Wrote 2–3 pieces daily</h4><p>Articles, captions, reel scripts — published every single day for 13 months.</p></div></div>
+      <div class="did-item"><div class="did-num">03</div><div class="did-content"><h4>Built the hook strategy</h4><p>Developed the opening-line formula that stopped the scroll.</p></div></div>
+      <div class="did-item"><div class="did-num">04</div><div class="did-content"><h4>Grew 60K → 100K followers</h4><p>Added 40K real followers organically.</p></div></div>
+  </div>
+</section>
+
+<hr>
+<!-- YOUTUBE -->
+<section class="section" id="youtube">
+  <div class="section-label">Personal Channel · Asli Baniya</div>
+  <h2 class="section-title" style="font-size:64px;line-height:1.05;">
+<span style="color:#ff0000;">▶</span> YouTube — <span style="color:#D93800;">Every Word Mine</span>
+</h2>
+  <p class="section-sub">Script. Hook. Thumbnail copy. Title. I handled every piece of copy on this channel — from the first line to the final frame.</p>
+
+  <div class="yt-header">
+    <div class="yt-meta">
+      <p style="font-size:15px;color:var(--mid);line-height:1.8;max-width:none;">Built a channel from scratch with zero budget. Wrote every script, designed every thumbnail, crafted every title. No shortcuts. No editing tricks. Just copy that worked.</p>
+    </div>
+    
+<div style="margin-top:32px;">
+<h3 style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;margin-bottom:18px;">
+What This Channel Taught Me
+</h3>
+<p style="font-size:15px;line-height:1.9;color:var(--mid);margin-bottom:16px;">
+Growing a channel without a budget forced me to understand attention. Every title, thumbnail and opening line had one job: earn the click.
+</p>
+<p style="font-size:15px;line-height:1.9;color:var(--mid);margin-bottom:16px;">
+I tested hooks, storytelling structures and thumbnail concepts to understand what makes people stop scrolling and start watching.
+</p>
+<p style="font-size:15px;line-height:1.9;color:var(--mid);">
+The result wasn't just views. It was a repeatable system for creating content that attracts attention and keeps it.
+</p>
+</div>
+
+<div class="yt-analytics-card">
+      <img class="yt-analytics-img" src="analytics.png" alt="YouTube Analytics">
+      <div class="yt-analytics-body">
+        <h4>Channel Analytics · Lifetime</h4>
+        <div class="yt-metric-row"><span class="yt-metric-label">Total Views</span><span class="yt-metric-val hi">5,60,633</span></div>
+        <div class="yt-metric-row"><span class="yt-metric-label">Shorts</span><span class="yt-metric-val">5,35,021</span></div>
+        <div class="yt-metric-row"><span class="yt-metric-label">Long-form</span><span class="yt-metric-val">25,609</span></div>
+        <div class="yt-metric-row"><span class="yt-metric-label">Watch Time</span><span class="yt-metric-val">1,487 hrs</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="thumb-grid">
+    <div class="thumb-card">
+      <div class="thumb-img"><img src="ASLI SACHH.png" alt="Asli Sachh"></div>
+      <div class="thumb-copy">
+        <div class="thumb-copy-tag">Viral Storytelling</div>
+        <div class="thumb-copy-title">No One Knows Asli Sachh — hook-driven storytelling.</div>
+      </div>
+    </div>
+    <div class="thumb-card">
+      <div class="thumb-img"><img src="Thumbnail%20MLM.png" alt="MLM CEO thumbnail"></div>
+      <div class="thumb-copy">
+        <div class="thumb-copy-tag">Expose Hook</div>
+        <div class="thumb-copy-title">"MLM KA CEO" — Two-word concept that instantly tells you the villain</div>
+      </div>
+    </div>
+    <div class="thumb-card">
+      <div class="thumb-img"><img src="Thumbnail.jpg" alt="YouTube thumbnail"></div>
+      <div class="thumb-copy">
+        <div class="thumb-copy-tag">Conversion Hook</div>
+        <div class="thumb-copy-title">Every thumbnail designed for one thing — making you click</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- EXPERTISE -->
+<section class="section" id="expertise">
+  <div class="section-label">Core Skills</div>
+  <h2 class="section-title">What I Do</h2>
+  <p class="section-sub">From first hook to final CTA — I handle the full content loop.</p>
+
+  <div class="expertise-grid">
+    <div class="exp-card"><div class="exp-icon">✍️</div><h4>Copywriting</h4><p>Conversion-focused. Every line earns its place. Social, email, brand, and long-form.</p></div>
+    <div class="exp-card"><div class="exp-icon">🎬</div><h4>Script Writing</h4><p>Short-form reels to long-form explainers. I write to the camera, not to the page.</p></div>
+    <div class="exp-card"><div class="exp-icon">📋</div><h4>Content Strategy</h4><p>Editorial calendars, hook testing, audience mapping, and platform-specific distribution.</p></div>
+    <div class="exp-card"><div class="exp-icon">📈</div><h4>Analytics & Growth</h4><p>Data-driven iteration. I track what works, cut what doesn't, and scale what does.</p></div>
+  </div>
+
+  <div style="margin-top:52px;">
+    <div class="section-label">Toolkit</div>
+    <div class="tools-grid" style="margin-top:20px;">
+      <div class="tool-category"><h4>Writing & Strategy</h4>
+        <div class="tag-row">
+          <span class="tag">Copywriting</span><span class="tag">Hook Writing</span><span class="tag">SEO Content</span>
+          <span class="tag">Video Scripts</span><span class="tag">Brand Voice</span><span class="tag">Email Copy</span>
+        </div>
+      </div>
+      <div class="tool-category"><h4>Platforms & Tools</h4>
+        <div class="tag-row">
+          <span class="tag">Instagram</span><span class="tag">YouTube</span><span class="tag">Canva</span>
+          <span class="tag">CapCut</span><span class="tag">Meta Ads</span><span class="tag">Google Analytics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<!-- ACHIEVEMENTS -->
+<section class="section" id="achievements">
+  <div class="section-label">Recognition & Credentials</div>
+  <h2 class="section-title">Achievements</h2>
+  <div class="achieve-grid">
+    <a href="LOR.png" target="_blank" class="achieve-card">
+      <div class="achieve-img-wrap"><img src="LOR.png" alt="LOR"></div>
+      <div class="achieve-body"><div class="achieve-title">Zonal Head — North India</div><div class="achieve-sub">Vista 2021, IIM Bangalore</div></div>
+    </a>
+    <a href="IIML.jpeg" target="_blank" class="achieve-card">
+      <div class="achieve-img-wrap"><img src="IIML.jpeg" alt="IIML"></div>
+      <div class="achieve-body"><div class="achieve-title">Finalist — Top 8 of 483 Teams</div><div class="achieve-sub">Anveshan AgriTech Case Competition</div></div>
+    </a>
+    <a href="IIT.jpeg" target="_blank" class="achieve-card">
+      <div class="achieve-img-wrap"><img src="IIT.jpeg" alt="IIT"></div>
+      <div class="achieve-body"><div class="achieve-title">Marketing Internship Certificate</div><div class="achieve-sub">IIT Delhi</div></div>
+    </a>
+    <a href="QCI.jpeg" target="_blank" class="achieve-card">
+      <div class="achieve-img-wrap"><img src="QCI.jpeg" alt="QCI"></div>
+      <div class="achieve-body"><div class="achieve-title">Young Quality Champion</div><div class="achieve-sub">Quality Council of India</div></div>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <div class="section-label">Let's Work</div>
+    <h2 class="contact-big">Ready to write<br><span class="acc">something real.</span></h2>
+    <p class="contact-sub">I'm available now. One email is all it takes.</p>
+    <div class="contact-links">
+      <a href="mailto:devendra.agarwal2002@gmail.com" class="c-link">✉ devendra.agarwal2002@gmail.com</a>
+      <a href="tel:+919473738606" class="c-link">✆ +91-9473738606</a>
+      <a href="https://linkedin.com/in/devendra-agarwal" target="_blank" class="c-link">↗ LinkedIn</a>
+      <a href="https://www.instagram.com/desikaanoon/" target="_blank" class="c-link">↗ Desi Kaanoon</a>
+    </div>
+  </div>
+</div>
+<footer>© 2026 Devendra Agarwal · All work is real and verifiable.</footer>
+
+</body>
+</html>
